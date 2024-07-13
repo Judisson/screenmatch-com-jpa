@@ -24,7 +24,7 @@
         private String poster;
         private String sinopse;
 
-        @Transient
+        @OneToMany(mappedBy = "serie")
         private List<Episodio> episodios = new ArrayList<>();
 
         public Serie() {}
@@ -38,6 +38,8 @@
             this.poster = dadosSerie.poster();
             this.sinopse = ConsultaMyMemory.obterTraducao(dadosSerie.sinopse()).trim();
         }
+
+
 
         public Long getId() {
             return id;
