@@ -38,6 +38,8 @@ public class Episodio {
         }
     }
 
+    public Episodio() {}
+
     public Long getId() {
         return id;
     }
@@ -100,6 +102,6 @@ public class Episodio {
                 ", titulo='" + titulo + '\'' +
                 ", numeroEpisodio=" + numeroEpisodio +
                 ", avaliacao=" + avaliacao +
-                ", dataLancamento=" + dataLancamento ;
+                ", dataLancamento=" + dataLancamento;
     }
 }
