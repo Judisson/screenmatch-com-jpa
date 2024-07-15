@@ -141,8 +141,10 @@ public class Principal {
     private void buscarSeriesPorAtor() {
         System.out.println("Qual o nome para busca?");
         var nomeAtor = leitura.nextLine();
-        List<Serie> seriesEncontradas = repositorio.findByAtoresContainingIgnoreCase(nomeAtor);
-        System.out.println("\n Séries em que " + nomeAtor + " trabalhou: ");
-        seriesEncontradas.forEach(s -> System.out.println(s.getTitulo() + " avaliação: " + s.getAvaliacao()));
+        System.out.println("Avaliações apartir de que valor?");
+        var avaliacao = leitura.nextDouble();
+        List<Serie> seriesEncontradas = repositorio.findByAtoresContainingIgnoreCaseAndAvaliacaoGreaterThanEqual(nomeAtor, avaliacao);
+        System.out.println("\nSéries em que " + nomeAtor + " trabalhou: ");
+        seriesEncontradas.forEach(s -> System.out.println(s.getTitulo() + " | avaliação: " + s.getAvaliacao()));
     }
 }
